@@ -8,11 +8,12 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            background: #1e1e2f url('festive-pattern.jpg')
+	    background-size: cover;
         }
         .calendar-container {
             position: relative;
@@ -25,9 +26,9 @@
         }
         .door {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.8);
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.5);
             color: #333;
             font-size: 20px;
             font-weight: bold;
@@ -44,29 +45,29 @@
         }
         /* Positionen der Türchen */
         .door:nth-child(1) { top: 50px; left: 50px; }
-        .door:nth-child(2) { top: 50px; left: 150px; }
-        .door:nth-child(3) { top: 50px; left: 250px; }
-        .door:nth-child(4) { top: 50px; left: 350px; }
-        .door:nth-child(5) { top: 150px; left: 50px; }
-        .door:nth-child(6) { top: 150px; left: 150px; }
-        .door:nth-child(7) { top: 150px; left: 250px; }
-        .door:nth-child(8) { top: 150px; left: 350px; }
-        .door:nth-child(9) { top: 250px; left: 50px; }
-        .door:nth-child(10) { top: 250px; left: 150px; }
-        .door:nth-child(11) { top: 250px; left: 250px; }
-        .door:nth-child(12) { top: 250px; left: 350px; }
+        .door:nth-child(2) { top: 50px; left: 200px; }
+        .door:nth-child(3) { top: 50px; left: 350px; }
+        .door:nth-child(4) { top: 50px; left: 500px; }
+        .door:nth-child(5) { top: 50px; left: 650px; }
+        .door:nth-child(6) { top: 50px; left: 800px; }
+        .door:nth-child(7) { top: 200px; left: 50px; }
+        .door:nth-child(8) { top: 200px; left: 200px; }
+        .door:nth-child(9) { top: 200px; left: 350px; }
+        .door:nth-child(10) { top: 200px; left: 500px; }
+        .door:nth-child(11) { top: 200px; left: 650px; }
+        .door:nth-child(12) { top: 200px; left: 800px; }
         .door:nth-child(13) { top: 350px; left: 50px; }
-        .door:nth-child(14) { top: 350px; left: 150px; }
-        .door:nth-child(15) { top: 350px; left: 250px; }
-        .door:nth-child(16) { top: 350px; left: 350px; }
-        .door:nth-child(17) { top: 450px; left: 50px; }
-        .door:nth-child(18) { top: 450px; left: 150px; }
-        .door:nth-child(19) { top: 450px; left: 250px; }
-        .door:nth-child(20) { top: 450px; left: 350px; }
-        .door:nth-child(21) { top: 550px; left: 50px; }
-        .door:nth-child(22) { top: 550px; left: 150px; }
-        .door:nth-child(23) { top: 550px; left: 250px; }
-        .door:nth-child(24) { top: 550px; left: 350px; }
+        .door:nth-child(14) { top: 350px; left: 200px; }
+        .door:nth-child(15) { top: 350px; left: 350px; }
+        .door:nth-child(16) { top: 350px; left: 500px; }
+        .door:nth-child(17) { top: 350px; left: 650px; }
+        .door:nth-child(18) { top: 350px; left: 800px; }
+        .door:nth-child(19) { top: 500px; left: 50px; }
+        .door:nth-child(20) { top: 500px; left: 200px; }
+        .door:nth-child(21) { top: 500px; left: 350px; }
+        .door:nth-child(22) { top: 500px; left: 500px; }
+        .door:nth-child(23) { top: 500px; left: 650px; }
+        .door:nth-child(24) { top: 500px; left: 800px; }
     </style>
 </head>
 <body>
