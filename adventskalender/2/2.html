@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dezember </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        #content {
+            display: none;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #444;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        p {
+            text-indent: 1.5em;
+        }
+        .decision {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        .decision p {
+            text-indent: 0;
+            font-weight: bold;
+        }
+        .decision a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        .decision a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentDate = new Date();
+            const releaseDate = new Date(currentDate.getFullYear(), 11, 1); // 1. Dezember (Monate sind 0-basiert)
+            if (currentDate >= releaseDate) {
+                document.getElementById("waiting").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="waiting">
+        <h1>Noch etwas Geduld</h1>
+        <p>Die Geschichte wird ab dem 1. Dezember verfügbar sein.</p>
+    </div>
+
+    <div id="content">
+        <div class="container">
+                      <div class="decision">
+                <p><strong>Was soll Johann tun?</strong></p>
+                <a href="#kapitel2-option1">1</a>
+                <a href="#kapitel2-option2">2</a>
+                <a href="#kapitel2-option3">3</a>
+            </div>
+        </div>
+            </div>
+</body>
+</html>
+
+
+
+
+<body>
+    
+</body>
+</html>
+
