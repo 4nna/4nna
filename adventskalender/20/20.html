@@ -63,7 +63,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currentDate = new Date();
-            const releaseDate = new Date(currentDate.getFullYear(), 11, 1); // 1. Dezember (Monate sind 0-basiert)
+            const releaseDate = new Date(currentDate.getFullYear(), 11, 20); // 1. Dezember (Monate sind 0-basiert)
             if (currentDate >= releaseDate) {
                 document.getElementById("waiting").style.display = "none";
                 document.getElementById("content").style.display = "block";
@@ -74,7 +74,7 @@
 <body>
     <div id="waiting">
         <h1>Noch etwas Geduld</h1>
-        <p>Die Geschichte wird ab dem 1. Dezember verfügbar sein.</p>
+        <p>Die Geschichte wird ab dem 20. Dezember verfügbar sein.</p>
     </div>
 
     <div id="content">
