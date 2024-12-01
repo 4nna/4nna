@@ -63,7 +63,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currentDate = new Date();
-            const releaseDate = new Date(currentDate.getFullYear(), 11, 2); // 2. Dezember (Monate sind 0-basiert)
+            const releaseDate = new Date(currentDate.getFullYear(), 11, 1); // 2. Dezember (Monate sind 0-basiert)
             if (currentDate >= releaseDate) {
                 document.getElementById("waiting").style.display = "none";
                 document.getElementById("content").style.display = "block";
