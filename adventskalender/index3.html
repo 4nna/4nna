@@ -50,11 +50,20 @@
             background: none;
             cursor: default;
         }
+
+
         .door-content {
-            width: 100%;
-            height: 100%;
-            background-size: 300%;
-            background-repeat: no-repeat;
+           # width: 100%;
+           # height: 100%;
+           # background-size: 300%;
+           # background-repeat: no-repeat;
+	    width: 800px; /* Match the calendar size */
+            height: 800px; /* Match the calendar size */
+            background-size: 800px 800px; /* Ensure full image size matches the container */
+            position: absolute;
+            top: -50px; /* Offset to align the image */
+            left: -50px; /* Offset to align the image */
+            clip-path: inset(50px 50px 650px 650px); /* Adjust to show only door's region */
         }
  
 
@@ -138,9 +147,17 @@
             doors.forEach(door => {
                 const doorDate = parseInt(door.getAttribute("data-date"), 10);
                 if (doorDate <= today) {
-                    door.classList.add("open");
-                    door.querySelector(".door-content").style.display = "block";
-                    door.style.pointerEvents = "none"; // Disable clicking on open doors
+		   const doorContent = door.querySelector(".door-content");
+                   const offsetX = parseInt(door.style.left) || 0;
+                   const offsetY = parseInt(door.style.top) || 0;
+
+                   doorContent.style.clipPath = `inset(${offsetY}px calc(800px - ${offsetX + 120}px) calc(800px - ${offsetY + 120}px) ${offsetX}px)`;
+                   door.classList.add("open");
+                   doorContent.style.display = "block";
+                   door.style.pointerEvents = "none"; // Disable clicking on open doors
+
+
+                    #door.querySelector(".door-content").style.display = "block";
                 } else {
                     door.querySelector(".door-content").style.display = "none";
                 }
@@ -150,8 +167,16 @@
                 door.addEventListener("click", () => {
                     if (!door.classList.contains("open")) {
                         door.classList.add("open");
-                        door.querySelector(".door-content").style.display = "block";
-                    }
+                        #door.querySelector(".door-content").style.display = "block";
+                
+			const doorContent = door.querySelector(".door-content");
+                    	const offsetX = parseInt(door.style.left) || 0;
+                    	const offsetY = parseInt(door.style.top) || 0;
+
+                    	doorContent.style.clipPath = `inset(${offsetY}px calc(800px - ${offsetX + 120}px) calc(800px - ${offsetY + 120}px) ${offsetX}px)`;
+                    	doorContent.style.display = "block";
+
+		    }
                 });
             });
         });
