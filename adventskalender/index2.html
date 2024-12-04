@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventskalender</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Festive', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1e1e2f url('bokeh.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .calendar-container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background: url('tannenbaum.jpg') no-repeat center center;
+            background-size: cover;
+            border: 5px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .door {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 120px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .door:hover {
+            background: #cbccff;
+            transform: scale(1.1);
+        }
+        .door.open {
+            background: none;
+            cursor: default;
+        }
+        .door-content {
+            width: 100%;
+            height: 100%;
+            background-size: 300%;
+            background-repeat: no-repeat;
+        }
+        /* Positionen der Türchen */
+        .door:nth-child(1) { top: 50px; left: 50px; }
+        .door:nth-child(2) { top: 50px; left: 200px; }
+        .door:nth-child(3) { top: 50px; left: 350px; }
+        .door:nth-child(4) { top: 50px; left: 500px; }
+        .door:nth-child(5) { top: 50px; left: 650px; }
+        .door:nth-child(6) { top: 200px; left: 50px; }
+        .door:nth-child(7) { top: 200px; left: 200px; }
+        .door:nth-child(8) { top: 200px; left: 350px; }
+        .door:nth-child(9) { top: 200px; left: 500px; }
+        .door:nth-child(10) { top: 200px; left: 650px; }
+        .door:nth-child(11) { top: 350px; left: 50px; }
+        .door:nth-child(12) { top: 350px; left: 200px; }
+        .door:nth-child(13) { top: 350px; left: 350px; }
+        .door:nth-child(14) { top: 350px; left: 500px; }
+        .door:nth-child(15) { top: 350px; left: 650px; }
+        .door:nth-child(16) { top: 500px; left: 50px; }
+        .door:nth-child(17) { top: 500px; left: 200px; }
+        .door:nth-child(18) { top: 500px; left: 350px; }
+        .door:nth-child(19) { top: 500px; left: 500px; }
+        .door:nth-child(20) { top: 500px; left: 650px; }
+        .door:nth-child(21) { top: 650px; left: 50px; }
+        .door:nth-child(22) { top: 650px; left: 200px; }
+        .door:nth-child(23) { top: 650px; left: 350px; }
+        .door:nth-child(24) { top: 650px; left: 500px; }
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <!-- Türchen -->
+        <div class="door" data-date="1"><div class="door-content" style="background-image: url('1/dezember1.webp'); background-position: 0% 0%;"></div>1</div>
+        <div class="door" data-date="2"><div class="door-content" style="background-image: url('2/dezember2.webp'); background-position: 25% 25%;"></div>2</div>
+        <div class="door" data-date="3"><div class="door-content" style="background-image: url('3/dezember3.webp'); background-position: 50% 50%;"></div>3</div>
+        <div class="door" data-date="4"><div class="door-content" style="background-image: url('4/dezember4.webp'); background-position: 75% 75%;"></div>4</div>
+        <!-- Repeat for all 24 days with different images and positions -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const doors = document.querySelectorAll(".door");
+            const today = new Date().getDate();
+
+            doors.forEach(door => {
+                const doorDate = parseInt(door.getAttribute("data-date"), 10);
+                if (doorDate <= today) {
+                    door.classList.add("open");
+                    door.querySelector(".door-content").style.display = "block";
+                    door.style.pointerEvents = "none"; // Disable clicking on open doors
+                } else {
+                    door.querySelector(".door-content").style.display = "none";
+                }
+            });
+
+            doors.forEach(door => {
+                door.addEventListener("click", () => {
+                    if (!door.classList.contains("open")) {
+                        door.classList.add("open");
+                        door.querySelector(".door-content").style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
